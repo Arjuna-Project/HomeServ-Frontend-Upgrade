@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Booking Type – HomeServ</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/booking-type.css">
+    <link rel="stylesheet" href="../css/Floatingbuttons.css">
+</head>
+
+<body class="booking-type-page">
+<div id="navbar"></div>
+<div class="dashboard">
+
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>HomeServ</h2>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="services.html">Browse Services</a></li>
+      <li><a href="my-bookings.html">My Bookings</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="../index.html" id="logoutBtn">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <div class="section-header">
+      <a href="services.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Services
+      </a>
+      <h2>Choose Booking Type</h2>
+    </div>
+
+    <div class="booking-options">
+
+      <!-- EMERGENCY -->
+      <div class="booking-card emergency" data-type="immediate">
+        <div class="card-icon danger">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h3>Immediate Service</h3>
+        <p class="tagline">Professional available within 3 hours</p>
+
+        <div class="price">30% extra for urgent service</div>
+
+        <ul class="features">
+          <li><i class="fas fa-check"></i> Immediate availability</li>
+          <li><i class="fas fa-check"></i> Priority scheduling</li>
+          <li><i class="fas fa-check"></i> Same-day service</li>
+        </ul>
+      </div>
+
+      <!-- SCHEDULED -->
+      <div class="booking-card scheduled" data-type="schedule">
+        <div class="card-icon success">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <h3>Scheduled Booking</h3>
+        <p class="tagline">Choose your preferred date and time</p>
+
+        <div class="price">Standard Pricing</div>
+
+        <ul class="features">
+          <li><i class="fas fa-check"></i> Flexible scheduling</li>
+          <li><i class="fas fa-check"></i> Up to 7 days in advance</li>
+          <li><i class="fas fa-check"></i> Plan ahead</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="action-center">
+      <button id="continueBtn" class="btn-primary">Continue</button>
+    </div>
+
+  </main>
+</div>
+<footer>
+    <div class="container">
+      <p>&copy; 2025 HomeServ. All rights reserved.</p>
+    </div>
+  </footer>
+<!-- ================= AI FLOATING BUTTONS ================= -->
+<div class="ai-floating-container">
+
+  <!-- DIY Image -->
+  <div class="ai-floating-btn diy-btn" id="diyBtn" title="DIY Image Assistance">
+    <i class="fas fa-camera"></i>
+  </div>
+
+  <!-- Chat Support -->
+  <div class="ai-floating-btn chat-btn" id="chatBtn" title="Help Support">
+    <i class="fas fa-comments"></i>
+  </div>
+
+</div>
+
+
+<!-- ================= CHAT MODAL ================= -->
+<div class="ai-modal" id="chatModal">
+  <div class="ai-modal-content">
+
+    <div class="ai-modal-header">
+      <h3>HomeServ Support</h3>
+      <span class="ai-close" id="closeChat">&times;</span>
+    </div>
+
+    <div class="ai-chat-body" id="chatBody"></div>
+
+    <div class="ai-chat-input">
+      <input type="text" id="chatInput" placeholder="Ask about HomeServ services..." />
+      <button id="sendBtn" class="btn-primary">Send</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ================= DIY IMAGE MODAL ================= -->
+<div class="ai-modal" id="diyModal">
+  <div class="ai-modal-content">
+
+    <div class="ai-modal-header">
+      <h3>DIY Image Assistance</h3>
+      <span class="ai-close" id="closeDIY">&times;</span>
+    </div>
+
+    <div class="ai-diy-body">
+      <input type="file" id="imageUpload" accept="image/*" class="file-input"/>
+      <button id="analyzeBtn" class="btn-primary">Analyze Issue</button>
+
+      <div id="diyResult" class="ai-diy-result"></div>
+    </div>
+
+  </div>
+</div>
+<!-- SCRIPTS -->
+<script src="../js/config.js"></script>
+<script src="../js/utils/api.js"></script>
+<script src="../js/user/booking-type.js"></script>
+<script src="../js/utils/componentLoader.js"></script>
+<script>
+    loadComponent("sidebar", "../components/sidebar-user.html");
+    loadComponent("navbar", "../components/navbar.html");
+</script>
+<script src="../js/user/DIY-image.js"></script>
+<script src="../js/user/helpsupport.js"></script>
+</body>
+</html>

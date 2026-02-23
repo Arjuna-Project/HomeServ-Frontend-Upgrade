@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Registration - HomeServ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/forms.css" />
+    <link rel="stylesheet" href="../css/buttons.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+    <main class="main-content">
+      <div class="auth-container">
+        <div class="auth-card">
+          <h2>Create User Account</h2>
+
+          <form id="userRegisterForm">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="name" required />
+            </div>
+
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="email" required />
+            </div>
+
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" id="password" required />
+            </div>
+
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label>Select Area</label>
+              <select id="userArea">
+                <option value="1">T. Nagar</option>
+                <option value="2">Anna Nagar</option>
+                <option value="3">Velachery</option>
+                <option value="4">Adyar</option>
+                <option value="5">Porur</option>
+                <option value="6">Tambaram</option>
+                <option value="7">Mylapore</option>
+                <option value="8">Guindy</option>
+                <option value="9">Thiruvanmiyur</option>
+                <option value="10">Perambur</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary full-btn">Register</button>
+          </form>
+
+          <p class="switch-link">
+            Already have an account?
+            <a href="login-user.html">Login</a>
+          </p>
+
+          <p class="back-home">
+            <a href="../index.html">← Back to Home</a>
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 HomeServ. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/utils/componentLoader.js"></script>
+    <script>
+      loadComponent("navbar", "../components/navbar.html");
+    </script>
+  </body>
+</html>

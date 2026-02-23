@@ -1,0 +1,196 @@
+.category-grid,
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  background: #f8f9fb;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 200px;   /* equal height */
+}
+
+
+.category-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.category-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.profile-wrapper {
+  width: 100%;
+  max-width: 700px;
+}
+
+.profile-title {
+  margin-bottom: 25px;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.profile-row:last-child {
+  border-bottom: none;
+}
+
+.profile-label {
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.profile-value {
+  font-weight: 500;
+  color: #111827;
+}
+
+.payment-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.payment-options label {
+  display: block;
+  margin-bottom: 10px;
+}
+.category-card .btn-view {
+  margin-top: auto;   
+  align-self: flex-start;
+}
+
+/* Wrapper */
+.payment-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* NOT center */
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
+/* Card */
+.payment-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+.payment-card h2 {
+  margin-bottom: 20px;
+}
+
+.payment-card h3 {
+  margin-bottom: 8px;
+}
+
+/* Methods */
+.payment-methods {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Extra fields */
+.payment-extra {
+  margin-top: 15px;
+  display: none;
+}
+
+/* Input group */
+.input-group {
+  display: flex;
+  gap: 20px;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.field.small {
+  max-width: 120px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* Button */
+.btn-primary {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #1fb981;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #159a6a;
+}
+
+.confirm-content {
+    width: 100%;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.confirm-main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Confirm page specific */
+.confirm-page {
+    padding-top: 20px;
+}
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard - HomeServ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/Floatingbuttons.css">
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>HomeServ</h2>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="services.html">Browse Services</a></li>
+                <li><a href="my-bookings.html">My Bookings</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="complaint.html" id="complaintBtn">Raise a Complaint</a></li>
+                <li><a href="../index.html" id="logoutBtn">Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+                <h1>Welcome to HomeServ</h1>
+
+            <section class="categories">
+                <h3>Service Categories</h3>
+
+                <div class="category-grid" id="categoryContainer">
+                </div>
+
+
+            </section>
+
+        </main>
+    </div>
+    <footer>
+    <div class="container">
+      <p>&copy; 2025 HomeServ. All rights reserved.</p>
+    </div>
+  </footer>
+<!-- ================= AI FLOATING BUTTONS ================= -->
+<div class="ai-floating-container">
+
+  <!-- DIY Image -->
+  <div class="ai-floating-btn diy-btn" id="diyBtn" title="DIY Image Assistance">
+    <i class="fas fa-camera"></i>
+  </div>
+
+  <!-- Chat Support -->
+  <div class="ai-floating-btn chat-btn" id="chatBtn" title="Help Support">
+    <i class="fas fa-comments"></i>
+  </div>
+
+</div>
+
+
+<!-- ================= CHAT MODAL ================= -->
+<div class="ai-modal" id="chatModal">
+  <div class="ai-modal-content">
+
+    <div class="ai-modal-header">
+      <h3>HomeServ Support</h3>
+      <span class="ai-close" id="closeChat">&times;</span>
+    </div>
+
+    <div class="ai-chat-body" id="chatBody"></div>
+
+    <div class="ai-chat-input">
+      <input type="text" id="chatInput" placeholder="Ask about HomeServ services..." />
+      <button id="sendBtn" class="btn-primary">Send</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ================= DIY IMAGE MODAL ================= -->
+<div class="ai-modal" id="diyModal">
+  <div class="ai-modal-content">
+
+    <div class="ai-modal-header">
+      <h3>DIY Image Assistance</h3>
+      <span class="ai-close" id="closeDIY">&times;</span>
+    </div>
+
+    <div class="ai-diy-body">
+      <input type="file" id="imageUpload" accept="image/*" class="file-input"/>
+      <button id="analyzeBtn" class="btn-primary">Analyze Issue</button>
+
+      <div id="diyResult" class="ai-diy-result"></div>
+    </div>
+
+  </div>
+</div>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/user/dashboard.js"></script>
+    <script src="../js/utils/componentLoader.js"></script>
+<script>
+    loadComponent("sidebar", "../components/sidebar-user.html");
+    loadComponent("navbar", "../components/navbar.html");
+    
+</script>
+<script src="../js/user/DIY-image.js"></script>
+<script src="../js/user/helpsupport.js"></script>
+
+</body>
+</html>
