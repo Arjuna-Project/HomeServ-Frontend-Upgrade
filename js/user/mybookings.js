@@ -36,12 +36,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       let waitingText;
 
-      if (diffDays > 0) {
+      if (booking.status === "completed") {
+        waitingText = "Completed";
+      } else if (diffDays > 0) {
         waitingText = diffDays + " day(s) remaining";
       } else if (diffDays === 0) {
         waitingText = "Today";
       } else {
-        waitingText = "Completed";
+        waitingText = "Pending";
       }
 
       card.innerHTML = `
