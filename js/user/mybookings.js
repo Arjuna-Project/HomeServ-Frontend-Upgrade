@@ -31,19 +31,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       today.setHours(0, 0, 0, 0);
       bookingDate.setHours(0, 0, 0, 0);
 
-      const diffTime = bookingDate - today;
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      const diffTime = today - bookingDate;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
       let waitingText;
 
       if (booking.status === "completed") {
         waitingText = "Completed";
-      } else if (diffDays > 0) {
-        waitingText = diffDays + " day(s) remaining";
-      } else if (diffDays === 0) {
+      } 
+      else if (diffDays > 0) {
+        waitingText = diffDays + " day(s) waiting";
+      } 
+      else if (diffDays === 0) {
         waitingText = "Today";
-      } else {
-        waitingText = "Pending";
+      } 
+      else {
+        waitingText = "Upcoming";
       }
 
       card.innerHTML = `
@@ -73,6 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       container.appendChild(card);
 
+      // Review button
       card.querySelectorAll(".review-btn").forEach((btn) => {
         btn.addEventListener("click", (e) => {
           const id = e.target.getAttribute("data-id");
@@ -81,6 +85,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
       });
 
+      // Complaint button
       card.querySelectorAll(".complaint-btn").forEach((btn) => {
         btn.addEventListener("click", (e) => {
           const id = e.target.getAttribute("data-id");
@@ -89,6 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
       });
     });
+
   } catch (error) {
     container.innerHTML = "<p>Failed to load bookings.</p>";
   }
